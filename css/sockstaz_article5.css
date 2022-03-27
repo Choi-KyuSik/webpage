@@ -1,0 +1,89 @@
+/* <!-- 공통 --> */
+
+ div{
+     display: block;
+ }
+ div, p{
+    
+     margin: 0;
+     padding: 0;
+     -webkit-text-size-adjust: none;
+ }
+ body{
+     font-size: .75em jost;
+     color: #333;
+     background: #fff;
+ }
+ p{
+     display: block;
+     margin-block-start: 1em;
+     margin-block-end: 1em;
+     margin-inline-start: 0px;
+     margin-inline-end: 0px;  
+ }
+ a{
+     text-decoration: none;
+     color: #181818;
+
+ }
+
+
+
+ .j_paras{
+
+     min-height: 450px;
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     margin-top: 50px;
+     text-align: center;
+ }
+ .j_title{
+     margin: 0px;
+ }
+ .j_paras p.j_title{
+     padding: 100px;
+ }
+ .j_title img{
+     border: none;
+     vertical-align: top;
+ }
+
+/* <!-- 버튼 --> */
+
+.j_title .j_buttonPro{
+ vertical-align: middle;
+ display: inline-block;
+ text-decoration: none;
+ outline: none;
+ cursor: pointer;
+ font-size: 12px;
+ padding: 8px 11px 9px;
+ color: #555;
+ background: #fff;
+ font-weight: bold;
+ transition: background-color 0.3s cubic-bezier(0.55,0,0.1,1);
+ }
+ .j_paras a{
+     display: block;
+ }
+ .j_paras .j_btn {
+     width: 100px;
+     margin: 30px auto 0;
+ }
+ .j_buttonPro.j_large{
+     padding: 15px 20px;
+     font-size: 12px;
+     letter-spacing: 1px;
+ }
+ .j_buttonPro.j_transtw{
+     background:none;
+     color: #fefefc;
+     border: 1px solid #fefefc;
+
+ }
+ .j_buttonPro.j_transtw.j_large.j_btn:hover{
+     background-color: #fefefc;
+     color: #555;
+ }

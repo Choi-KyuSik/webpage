@@ -1,0 +1,242 @@
+    nav * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+    }
+    nav a{
+        color: black;
+    }
+
+     /* nav 전체 logo, menu, search*/
+    #nav {
+        height:126px;
+        display: flex;
+        /* bottom: 1px; */
+        padding-top:42px;
+        padding-bottom: 80px;
+        flex-direction: row;
+        border-bottom: 1px solid rgb(222,222,222);
+        /* position: relative; */
+        width: 100%;
+        /* font-size: 1rem; */
+    }
+    
+    /* 로고 */
+    .nav_logo{
+        margin-left: 50px;
+        /* margin-top: 20px; */
+        margin-right: 3vw;
+    }
+
+    .k_menu ul{
+        margin-top: 20px;
+    }
+    .k_menu>ul>li>a{
+        border: none;
+        font-family: 'Jost';
+        letter-spacing: 1.8px;
+        font-weight: 500;
+        font-size: 0.8em;   
+        margin: 0px 0.7em;        
+        position: relative;
+        padding:5px 0px 40px;
+    }
+
+    /* 메인메뉴 hover 밑줄 효과 */
+    .k_menu>ul>li>a::before {
+        content: "";
+        background-color: #c6ae88;
+        height: 3px;
+        width:100%;
+        opacity: 0;
+        bottom: 0;
+        transition:0.6s;
+        position: absolute;
+    }
+    .k_menu>ul>li>a:hover::before {
+        content: "";
+        background-color: #c6ae88;
+        height: 3px;
+        width:100%;
+        opacity: 100%;
+        bottom: 0;
+        position: absolute;
+    }
+
+    /* 메인메뉴 클릭 검은줄*/
+    .k_menu>ul>li>a:active::before {
+        content: "";
+        background-color:black;
+        height: 2.5px;
+        width:100%;
+        opacity: 100%;
+        bottom: 0;
+        position: absolute;
+    }
+
+    /* 서브메뉴 fadeIn 효과 */
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    
+      /* 서브메뉴 보이기 */
+    .k_menu ul li:nth-child(1):hover ul{
+       display: flex;
+       animation: fadeIn 0.5s;
+       animation-fill-mode: forwards; 
+      } 
+    .k_menu ul li:nth-child(2):hover ul{
+     display: flex;
+     animation: fadeIn 0.5s;
+     animation-fill-mode: forwards; 
+    } 
+
+    /* 서브메뉴 */
+    .k_sub {
+        min-width: max-content;
+        box-sizing: border-box;
+        z-index:9999;
+        display: none;
+        position: absolute;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 0.8em;
+        left:0;
+        top:155px;
+        width: 100vw;
+        background: rgba(255,255,255,1);
+        border-top: 1px solid #ebebeb; 
+        border-bottom: 1px solid #ebebeb;
+       
+    }
+    
+    .k_sub div {
+        height: 270px;
+        padding: 10px 25px 25px 25px;
+        border-right:1px solid #efefef;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    
+    .k_sub a{
+        color: #666666;
+    }
+    .k_sub a:hover{
+        color: #B2B2B2;
+    }
+    div.k_all{
+        font-size: 0.75em;
+        line-height: 0.5;
+        background-color: #fafafa;;
+    }
+    
+    .k_all {
+        color:#444444;
+        font-weight:400; 
+        padding-top: 25px !important;
+    }
+    .k_title{
+        font-family: 'Jost';
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #333333;
+        margin-bottom: 0;
+    }
+    .k_pick{
+        padding-top:13px !important;
+        margin-left: 70px;
+        font-weight: bold;
+        color:#444444;;
+        text-align: center;
+        /* font-size: 18px; */
+        line-height: 0.1;
+    }
+    .k_pick img{
+        width: 140px;
+        transition: 0.4s;
+        margin-bottom: 10px;
+    }
+
+    .k_pick img:hover{
+     filter:opacity(60%);
+    }
+    .k_brand{
+        color: #666666;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8em;
+        margin-bottom: 7px;
+    }
+    .k_name{
+        text-align: center;
+        color: #555555;
+        font-size: 0.75em;
+    }
+    
+    .k_length_detail{
+        font-size: 0.8em;
+    }
+
+    .k_material a,.k_special a{
+        font-size: 0.9em;
+    }
+    
+    .k_m{
+        margin:3px;
+    }
+    div.k_search{
+        float: right;
+    }
+
+    nav fieldset{
+        float: right;
+        align-items: center;
+        margin-right: 25px;
+        width: 107px;
+        height:33px;
+        border: 0;
+        border: 1px solid rgba(192, 180, 180, 0.87);
+        position: relative;
+    }
+    
+    .k_search input {
+        display: inline;
+    }
+    .k_search input[type=text]{
+        width:100px;
+        height:30px;
+        text-align: start;
+        font-size: 90%;
+        /* 검색창 늘리기 효과 */
+        transition: 0.3s;
+        border: 0;
+    }
+    
+    .k_search input[type=image]{
+        margin:-1px;
+        float:right; 
+        border:none; 
+        width:36px; 
+        height:32px;
+        /* 버튼 이미지 위치고정 */
+        position: absolute;
+    }
+
+    /* 클릭시 검색창 크기 늘리기 */
+    .k_search input[type=text]:focus {
+        width:170px;
+    }
+
+    /* 드래그 색상  */
+    ::selection {
+        background: #c6ae88;
+        color: #fff;
+    }

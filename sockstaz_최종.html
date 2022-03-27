@@ -1,0 +1,2647 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCKSTAZ 학습용 클론 페이지입니다</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!--article1 bxslider jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/sockstaz_nav_01.css">
+    <link rel="stylesheet" type="text/css" href="./css/sockstaz_header_footer.css">
+    <link rel="stylesheet" type="text/css" href="./css/sockstaz_section_article1_ver7.css">
+    <link rel="stylesheet" type="text/css" href="./css/sockstaz_section_article2_style.css">
+    <link rel="stylesheet" type="text/css" href="./css/sockstaz_section_article3_ver3.css">
+    <link rel="stylesheet" type="text/css" href="./css/sockstaz_section_article4.css">
+    <link rel="stylesheet" type="text/css" href="./css/sockstaz_section_article5_ver2.css">
+
+<style>
+
+@media (min-width:1500px) {
+            body{
+                font-size: 1.2rem;
+            }
+            .nav_logo img{
+               width: 240px;
+            }
+        }
+    
+    /* 크기 작아지면 검색창 숨기기 */
+    @media screen and (max-width: 1200px){
+        nav fieldset{
+            display: none;
+        }
+        .c_new_arrival_tab .c_product01 {
+            width: 33.333%;
+        }
+    }
+
+    /* 800 보다 작을 때 */
+    @media (max-width:799px) {
+        body{
+            font-size: 0.8rem;
+        }
+        header{ 
+            width: 90%; 
+        }
+        .nav_logo img{
+            width: 200px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="ej_head">
+            <div class="ej_head_left">
+            <ul>
+                <li class="ej_about"><a href="#">ABOUT</a></li>
+                <li class="ej_storec"><a href="#" id="ej_store">STORE</a></li>
+                <li class="ej_board"><a href="#">BOARD</a></li>
+            </ul>
+            </div>
+            <div class="ej_head_right">
+                <ul>
+                    <li id="ej_help"><a href="#">HELP DESK</a></li>
+                    <li class="ej_per"><a href="#" class="ej_person"><img src="./image/person.png"></a>
+                    <p class="ej_login"></p>
+                    <div class="ej_login">
+                        <p class="ej_login_in">
+                        <a href="#" id="ej_L">LOGIN</a>
+                        <a href="#" id="ej_O">ORDER LIST</a>
+                        <a href="#" id="ej_J">JOIN US</a></p>
+                    </div>
+                    </li>
+                    <li class="ej_he"><a href="#" class="ej_heart"><img src="./image/heart.png"></a></li>
+                    <li class="ej_ba"><a href="#" class="ej_basket"><img src="./image/basket.png"></a></li>
+                    <li><a href="#" id="ej_count"><span>0</span></a></li>
+                </ul>
+            </div>
+            </div>
+            <script>
+                // 로그인창  hover 효과
+                $('.ej_per').hover(function(){
+                    $('.ej_login').animate({
+                        right : '82px'
+                    });
+            });
+            //     $('.ej_per').hover(function() {
+            //         $('.ej_login').fadeIn(1000);
+            // });
+            </script>
+    </header>
+    <!-- nav -->
+    <nav id="nav">
+        <div class="nav_logo">
+            <a href="#">
+                <img src="image/logo4.gif" alt="sockstaz">
+            </a>
+        </div>
+        <div class="k_menu">
+            <ul>
+                <li class="k_main_menu">
+                    <a href="#"" id="k_men" style="font-family: 'Jost';">MEN</a>
+                    <!-- MEN 호버 메뉴 -->
+                    <ul id="men_sub" class=" k_sub">
+                        <!-- today's pick -->
+                        <div class="k_pick" style="padding-right: 25px;">
+                            <p class="k_pick">TODAY'S PICK&emsp;&emsp;&emsp;&emsp;</p>
+                            <a href="#"><img src="image/men_pick.jpg" alt=""></a>
+                            <p class="k_brand">NISHIGUCHI KUTSUSHITA</p>
+                            <p class="k_name">NK203 Men Linen Ribbed Socks</p>
+                        </div>
+                        <!-- 종합 카테고리 -->
+                        <div class="k_all" style="font-weight:500;">
+                            <P><a href="#">ALL PRODUCT</a></P>
+                            <P><a href="#">WEEKLY BEST 50</a></P>
+                            <P><a href="#">STANDARD</a></P>
+                        </div>
+                            <!-- 길이별 카테고리 -->
+                        <div class="k_length">
+                            <p class="k_title">LENGTH</p>
+                            <ul class="k_length_detail" style="display: inline;margin-top: 10px;">
+                                    <span><a href="#"><img src="image/inv.png" alt="inv">INVISIBLE</a></span>&emsp;
+                                    <span><a href="#"><img src="image/sne.png" alt="sne">SNEAKERS</a></span><br>
+                                    <span><a href="#"><img src="image/sho.png" alt="sho">SHORT</a></span>&emsp;&emsp;&nbsp;
+                                    <span><a href="#"><img src="image/cre.png" alt="cre">CREW</a></span><br>
+                                    <span><a href="#"><img src="image/kne.png" alt="kne">KNEE HIGH</a></span>
+                                    <span style="opacity: 0;"><a href="#"><img src="image/kne.png">LEGGINGS/TIGHTS</a></span>
+                            </ul>
+                        </div>
+                            <!-- 재질별 카테고리 -->
+                        <div class="k_material">
+                            <p class="k_title">MATERIAL</p><br>
+                                <P class="k_m"><a href="#">COTTON</a></P>
+                                <P class="k_m"><a href="#">SILKET / MODAL</a></P>
+                                <P class="k_m"><a href="#">WOOL / CASHMERE</a></P>
+                                <P class="k_m"><a href="#">SPORTS</a></P>
+                        </div>
+                         <!-- 기타 카테-->
+                        <div class="k_special" style="border-right: none;">
+                            <p class="k_title">SPECIAL</p><br>
+                            <a href="#">수트에 어울리는 양말</a>
+                        </div>
+                    </ul>
+            </li>
+            <li class="k_main_menu"> 
+                <a href="#" id="k_women" style="font-family:'Jost';">WOMEN</a>
+                <!-- WOMEN 호버 메뉴 -->
+                <ul id="women_sub" class="k_sub">
+                     <!-- today's pick -->
+                    <div class="k_pick">
+                        <p class="k_pick">TODAY'S PICK&emsp;&emsp;&emsp;&emsp;</p>
+                        <a href="#"><img src="image/women_pick.jpg" alt=""></a>
+                        <p class="k_brand">HANSEL FROM BASEL</p>
+                        <p class="k_name">HFB655 Italia Cashmere Rib crew</p>
+                    </div>
+                    <!-- 종합 카테고리 -->
+                    <div class="k_all" style="font-weight:500;">
+                        <P><a href="#">ALL PRODUCT</a></P>
+                        <P><a href="#">WEEKLY BEST 50</a></P>
+                        <P><a href="#">STANDARD</a></P>
+                    </div>
+                    <!-- 길이별 카테고리 -->
+                    <div class="k_length">
+                        <p class="k_title">LENGTH</p>
+                        <ul class="k_length_detail" style="display: inline; margin-top: 10px;">
+                            <span><a href="#"><img src="image/inv.png" alt="inv">INVISIBLE</a></span>&emsp;
+                            <span><a href="#"><img src="image/sne.png" alt="sne">SNEAKERS</a></span><br>
+                            <span><a href="#"><img src="image/sho.png" alt="sho">SHORT</a></span>&emsp;&emsp;&nbsp;
+                            <span><a href="#"><img src="image/cre.png" alt="cre">CREW</a></span><br>
+                            <span><a href="#"><img src="image/kne.png" alt="kne">KNEE HIGH</a></span>
+                            <span><a href="#"><img src="image/kne.png" alt="lt">LEGGINGS/TIGHTS</a></span>
+                        </ul>
+                    </div>
+                    <!-- 재질별 카테고리 -->
+                    <div class="k_material">
+                        <p class="k_title">MATERIAL</p><br>
+                        <P class="k_m"><a href="#">COTTON</a></P>
+                        <P class="k_m"><a href="#">RAYON / NYLON</a></P>
+                        <P class="k_m"><a href="#">WOOL / CASHMERE</a></P>
+                        <P class="k_m"><a href="#">SPORTS</a></P>
+                    </div>
+                    <!-- 기타 카테 -->
+                    <div class="k_special" style="border-right: none;">
+                        <p class="k_title">SPECIAL</p><br>
+                        <a href="#">무지 솔리드 양말</a>
+                    </div>
+                </ul>
+            </li>
+            <li class="k_main_menu"><a href="#" style="font-family: 'Jost';">SPORTS</a></li>
+            <li class="k_main_menu"><a href="#" style="font-family: 'Jost';">KIDS</a></li>
+            <li class="k_main_menu"><a href="#" style="font-family: 'Jost';">BAG</a></li>
+            <li class="k_main_menu"><a href="#" style="font-family: 'Jost';">ACC</a></li>
+            <li class="k_main_menu"><a href="#" style="font-family: 'Jost';">GIFT SET</a></li>
+            <li class="k_main_menu"style="font-weight:400; color:rgb(222,222,222);border:none;">|</li>
+            <li class="k_main_menu"><a href="#" style="font-family: 'Jost';">OUTLET</a></li>
+            <li class="k_main_menu"><a href="#" style="font-family: 'Jost';">BRAND</a></li>
+            </ul>
+        </div>
+        <div id="k_search" style="margin-left: auto; margin-right: 50px;">
+            <form action:"" name="search" method="get" target="_self">
+                <fieldset id="k_search">
+                    <div class="k_search">
+                        <input type="text" id="search" name="k_search">
+                        <input type="image" name="k_searchBtn" src="image/btn_search.gif" alt="searchBtn" onclick="alert('검색어를 입력해주세요')"> 
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </nav>
+    <div id="wrep">
+        <div id="container" class="j_about">
+            <div id="wcontents">
+                <div id="mainb">
+                            <ul class="j_slider3" style="width: auto; position: relative;">
+                                <li class="j_w9 j_tb" style="float: none; list-style: none; position: absolute; width: 100%; z-index: 50; display: block;">
+                                    <p class="j_back j_left">
+                                        <a href="#"><img src="./image/mainbanner328.jpg" ></a>
+                                    </p>
+                                    <p class="j_box j_left">
+                                        <a class="j_subt">NEW BRAND</a>
+                                        <a class="j_title">HIIG</a>
+                                        <a class="j_desc">
+                                         신기에 과하지 않으면서도 유니크한 포인트가 되어 드립니다. 
+                                        <br>
+                                         삭스타즈에 새롭게 입점한 브랜드 히그의 편안하고 아름다운 양말들을 만나보세요. 
+                                        </a>
+                                        <a href="#" class="j_buttonPro j_large j_transtb">SHOP NOW</a>
+                                    </p>
+                                </li>
+                                <li class="j_w7 j_tb" style="background: #eaeaea;">
+                                    <p class="j_back j_left">
+                                        <a href="#">
+                                            <img src="./image/mainbanner323.jpg">
+                                        </a>
+                                    </p>
+                                    <p class="j_box j_left">
+                                        <a class="j_subt">RESTOCK</a>
+                                        <a class="j_title">THUNDERS LOVE</a>
+                                        <a class="j_desc">
+                                            지속가능한 양말에 가장 가까운 브랜드
+                                            <br>
+                                            썬더스럽의 리사이클 코튼, 울 삭스들이 재입고 되었습니다.
+                                        </a>
+                                        <a href="#" class="j_buttonPro j_large j_transtb">SHOP NOW</a>
+                                    </p>
+                                    
+                                </li>
+                                <li class="j_w8 j_tb" style="background: #f7f7f7;">
+                                    <p class="j_back j_left">
+                                        <a href="#">
+                                            <img src="./image/mainbanner327.jpg">
+                                        </a>
+                                    </p>
+                                    <p class="j_box j_left">
+                                        <a class="j_subt">NEW ARRIVAL</a>
+                                        <a class="j_title">GOODMOTHER SYNDROME</a>
+                                        <a class="j_desc">
+                                            온가족이 함께 신을 수 있는 양말브랜드
+                                            <br>
+                                            굿마더신드롬의 새로운 양말들이 출시되었습니다.
+                                        </a>
+                                        <a href="#" class="j_buttonPro j_large j_transtb">SHOP NOW</a>
+                                    </p>
+                                </li>
+                                <li class="j_w6 j_tb" style="background: #e5ebf7;">
+                                    <p class="j_back j_left">
+                                        <a href="#">
+                                            <img src="./image/mainbanner322.jpg">
+                                        </a>
+                                    </p>
+                                    <p class="j_box j_left">
+                                        <a class="j_subt">NEW ARRIVAL</a>
+                                        <a class="j_title">BONNE SYNDROME</a>
+                                        <a class="j_desc">
+                                            본메종의 새로운 컬렉션을 만나보세요.
+                                            <br>
+                                            아름다운 자연과 신비한 이야기들이 담긴 멋진 양말들입니다.
+                                        </a>
+                                        <a href="#" class="j_buttonPro j_large j_transtb">SHOP NOW</a>
+                                    </p>
+                                </li>    
+                                <li class="j_w5 j_tb" style="background: #f6f6f6;">
+                                    <p class="j_back j_left">
+                                        <a href="#">
+                                            <img src="./image/mainbanner321.jpg">
+                                        </a>
+                                    </p>
+                                    <p class="j_box j_left">
+                                        <a class="j_subt">NEW ARRIVAL</a>
+                                        <a class="j_title">NORU SEOUL</a>
+                                        <a class="j_desc">
+                                            "따뜻하고 조용한 감성을 전달하는 브랜드"
+                                            <br>
+                                            "노루의 새로운 스테디셀러 노루 립을 소개합니다."
+                                        </a>
+                                        <a href="#" class="j_buttonPro j_large j_transtb">SHOP NOW</a>
+                                    </p>
+                                </li>                                    
+                            </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+           <!-- 이벤트, 스냅 버튼 -->
+    <div class="p_button-center">
+        <div class="p_button-event">
+            <button type="submit" class="p_button-event-btn" style='cursor:pointer'>EVENT</button>
+        </div>
+        <div class="p_button-snap">
+            <button type="submit" class="p_button-snap-btn" style='cursor:pointer'>SNAP</button>
+        </div>
+    </div>
+    <!-- 이벤트 페이지 -->
+        <div class="p_container-01">
+            <a href="#">
+                <img src="./image/article2_image01.jpeg" class="p_card-img">
+            </a>
+            <a href="#">
+                <img src="./image/article2_image02.jpeg" class="p_card-img">
+            </a>
+            <a href="#">
+                <img src="./image/article2_image03.jpeg" class="p_card-img">
+            </a>
+            <div class="p_event-desc">
+                <p class="p_card-title">&nbsp; &nbsp; 삭스타즈 앱 출시 기념 이벤트</p>
+                <p class="p_card-text">&nbsp; &nbsp; <b>2021. 09. 03 ~</b> 진행중</p>
+            </div>
+            <div class="p_event-desc">
+                <p class="p_card-title">&nbsp; &nbsp; 삭스타즈 향기배송 서비스</p>
+                <p class="p_card-text">&nbsp; &nbsp; 항시 진행</p>
+            </div>
+            <div class="p_event-desc">
+                <p class="p_card-title">&nbsp; &nbsp; 더욱 강화된 신규/기존회원 혜택</p>
+                <p class="p_card-text">&nbsp; &nbsp; <b>2018. 01. 08 UPDATE</b></p>
+            </div>
+            <!-- 'more event' 버튼 -->
+            <div class="p_button-event">
+                <button type="submit" class="p_button-more-event-btn">MORE EVENT</button>
+            </div>
+        </div>
+    <!-- 스냅 페이지 -->
+        <div class="p_container-02">
+            <a href="#">
+                <img src="./image/article2_image04.png" class="p_card-img">
+            </a>
+            <a href="#">
+                <img src="./image/article2_image05.png" class="p_card-img">
+            </a>
+            <a href="#">
+                <img src="./image/article2_image06.png" class="p_card-img">
+            </a> 
+        <!-- 'more snap' 버튼 -->
+        <div class="p_button-snap">
+            <button type="submit" class="p_button-more-snap-btn">MORE SNAP</button>
+        </div>
+        </div>
+    <script>
+    // section2 - 로드 시 디폴트 페이지
+    $(document).ready(function() {
+        $('.p_container-01').show();
+        $('.p_container-02').hide();
+     });
+
+    // section2 > event button 클릭 시 효과
+    $('.p_button-event-btn').click(function() {
+        $('.p_container-01').fadeIn(350);
+        $('.p_container-02').fadeOut(350);
+        $('.p_button-event-btn').css({
+            "background-color":"#212121",
+            "color": "#FFFFFF"});
+        $('.p_button-snap-btn').css({
+            "background-color":"#FFFFFF",  
+            "color":"#212121"});
+    });
+    // section2 > snap button 클릭 시 효과
+    $('.p_button-snap-btn').click(function() {
+        $('.p_container-02').fadeIn(350);
+        $('.p_container-01').fadeOut(350);
+        $('.p_button-snap-btn').css({
+            "background-color" : "#212121",
+            "color": "#FFFFFF",
+            "border" : "#BBBBBB",
+            "border-style" : "solid",
+            "border-width" : "1px",
+            "border-spacing": "0px"});
+        $('.p_button-event-btn').css({
+            "background-color":"#FFFFFF",
+            "color":"#212121",
+            "border" : "#BBBBBB",
+            "border-style" : "solid",
+            "border-width" : "1px",
+            "border-spacing": "0px"});
+    });
+    </script>
+    
+        <div class="j_paras"  style="background-image:url('https://zpsses21c.imghost.cafe24.com/banner/midbanner15.jpg');  margin-bottom: 100px;" >
+            <p class="j_title">
+                <a><img class="j_lazy j_loaded"  data-src="https://zpsses21c.imghost.cafe24.com/banner/mid_txt14.png"
+                    src="./image/mid_txt14.png"
+                    data-was-processed="true"></a>
+                <a href="#" class="j_buttonPro j_transtw j_large j_btn" >SHOP NOW</a>
+            </p>
+        </div>
+
+    <article>
+        <!--nav 삽입-->
+        <div class="c_button">
+            <div class="c_new_arrival_button">
+                <button type="submit" class="c_nab" style='cursor:pointer'>NEW ARRIVAL</button>
+            </div>
+            <div class="c_man's_best">
+                <button type="submit" class="c_mbb" style='cursor:pointer'>MAN'S BEST</button>
+            </div>
+            <div class="c_woman's_best">
+                <button type="submit" class="c_wbb" style='cursor:pointer'>WOMAN'S BEST</button>
+            </div>
+            <div class="c_life_style">
+                <button type="submit" class="c_lsb" style='cursor:pointer'>LIFE STYLE</button>
+            </div>
+        </div>
+        <!-- newArrival 탭 -->
+        <div class="c_NewArrival">
+            <div class="c_new_arrival_tab c_nat">
+                <ul class="c_productList">
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_01.jpg" alt="">
+                                    <img class="c_mark" src="./image/new_arrival_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">RORO</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >ROR060 handkerchief</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>39,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>RORO</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>502</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_02.jpg" alt="">
+                                    <img class="c_mark" src="./image/new_arrival_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">RORO</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >ROR061 april</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>39,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>RORO</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>502</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_03.jpg" alt="">
+                                    <img class="c_mark" src="./image/new_arrival_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">RORO</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >ROR062 volume</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>42,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>RORO</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>502</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_04.jpg" alt="">
+                                    <img class="c_mark" src="./image/new_arrival_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">RORO</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >ROR063 confetti</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>37,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>RORO</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>502</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_05.jpg" alt="">
+                                    <img class="c_mark" src="./image/new_arrival_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">RORO</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >ROR064 rain or shine</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>45,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>RORO</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>502</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_06.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HIIG</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HIIG335 Green logo</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>10,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HIIG</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>665</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_07.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HIIG</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HIIG334 Yellow logo</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>10,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HIIG</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>665</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_08.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HIIG</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HIIG333 Navy logo</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>10,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HIIG</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>665</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_09.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HIIG</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HIIG189 Charcoal</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>12,200 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HIIG</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>665</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_10.jpg" alt="">
+                                    <img class="c_mark" src="./image/restock_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB703 Half + Half : turquoise mix</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_11.jpg" alt="">
+                                    <p class="c_hover_icon" >
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB702 Half + Half : lemon mix</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_12.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span>HFB701 Rosie : powder blue</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_13.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span>HFB700 Rosie : brown</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_14.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB699 Flora and Fauna : black</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_15.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB698 Flora and Fauna : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_16.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB696 Bandana Patch : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_17.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB695 Toons : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>39,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_18.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB694 Lucid : pale blue</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>39,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_19.jpg" alt="">
+                                    <img class="c_mark" src="./image/restock_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB692 Jane : black</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>21,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_20.jpg" alt="">
+                                    <img class="c_mark" src="./image/restock_mark.png">
+                                    <p class="c_hover_icon" >
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB690 Collegiate Heart : Ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>21,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="c_ManBest">
+            <div class="c_new_arrival_tab c_nat">
+                <ul class="c_productList">
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_07.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HIIG</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HIIG334 Yellow logo</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>10,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HIIG</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>665</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_08.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HIIG</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HIIG333 Navy logo</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>10,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HIIG</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>665</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_09.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HIIG</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HIIG189 Charcoal</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>12,200 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HIIG</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>665</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_10.jpg" alt="">
+                                    <img class="c_mark" src="./image/restock_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB703 Half + Half : turquoise mix</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_11.jpg" alt="">
+                                    <p class="c_hover_icon" >
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB702 Half + Half : lemon mix</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_12.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span>HFB701 Rosie : powder blue</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="c_WomanBest">
+            <div class="c_new_arrival_tab c_nat">
+                <ul class="c_productList">
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_13.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span>HFB700 Rosie : brown</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_14.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB699 Flora and Fauna : black</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_15.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB698 Flora and Fauna : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_16.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB696 Bandana Patch : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_17.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB695 Toons : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>39,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_18.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB694 Lucid : pale blue</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>39,000 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="c_LifeStyle">
+            <div class="c_new_arrival_tab c_nat">
+                <ul class="c_productList">
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_19.jpg" alt="">
+                                    <img class="c_mark" src="./image/restock_mark.png">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB692 Jane : black</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>21,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_20.jpg" alt="">
+                                    <img class="c_mark" src="./image/restock_mark.png">
+                                    <p class="c_hover_icon" >
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB690 Collegiate Heart : Ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>21,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_13.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span>HFB700 Rosie : brown</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_14.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB699 Flora and Fauna : black</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_15.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB698 Flora and Fauna : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="c_product01">
+                        <div class="c_product_box">
+                            <div class="c_img_box">
+                                <a href="#">
+                                    <img class="c_main_img" src="./image/new_arrival_product_16.jpg" alt="">
+                                    <p class="c_hover_icon">
+                                        <a href="#">
+                                            <img src="./image/myCart.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/p_view.png">
+                                        </a>
+                                        <a href="#">
+                                            <img src="./image/Like.png">
+                                        </a>
+                                    
+                                    </p>
+                                </a>
+                                <span>
+                                    <!--   to do   -->
+                                </span>
+                            </div>
+                            <div class="c_content_box">
+                                <p class="c_brand">
+                                    <a href="#">HANSEL FROM BASEL</a>
+                                </p>
+                                <p class="c_product_name">
+                                    <a href="#"><span >HFB696 Bandana Patch : ivory</span></a>
+                                </p>
+                            </div>
+                            <ul class="c_info">
+                                <li class="c_color">
+                                    <!--   to do   -->
+                                    <span class="chips" style="background-color: #999999;"></span>
+                                    <span class="chips" style="background-color: #555555;"></span>
+                                    <span class="chips"></span>
+                                    <a href="#"></a>
+                                </li>
+                                <li class="c_price">
+                                    <span>32,500 won</span>
+                                </li>
+                                <li class="c_company">
+                                    <span>HANSEL FROM BASEL</span>
+                                </li>
+                                <li class="c_company_no">
+                                    <span>505</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            // section2 - 로드 시 디폴트 페이지
+            $(document).ready(function() {
+                $('.c_NewArrival').show();
+                $('.c_ManBest').hide();
+                $('.c_WomanBest').hide();
+                $('.c_LifeStyle').hide();
+                });
+
+            // section2 > event button 클릭 시 효과
+            $('.c_nab').click(function() {
+                $('.c_NewArrival').fadeIn(350);
+                $('.c_ManBest').fadeOut(350);
+                $('.c_WomanBest').fadeOut(350);
+                $('.c_LifeStyle').fadeOut(350);
+                $('.c_nab').css({
+                    "background-color":"#212121",
+                    "color": "#FFFFFF"});
+                $('.c_mbb').css({
+                    "background-color":"#FFFFFF",  
+                    "color":"#212121"});
+                $('.c_wbb').css({
+                    "background-color":"#FFFFFF",  
+                    "color":"#212121"});
+                $('.c_lsb').css({
+                    "background-color":"#FFFFFF",  
+                    "color":"#212121"});
+            });
+            // section2 > snap button 클릭 시 효과
+            $('.c_mbb').click(function() {
+                $('.c_ManBest').fadeIn(350);
+                $('.c_NewArrival').fadeOut(350);
+                $('.c_WomanBest').fadeOut(350);
+                $('.c_LifeStyle').fadeOut(350);
+                $('.c_mbb').css({
+                    "background-color" : "#212121",
+                    "color": "#FFFFFF",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_nab').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_wbb').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_lsb').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+            });
+            // section2 > snap button 클릭 시 효과
+            $('.c_wbb').click(function() {
+                $('.c_WomanBest').fadeIn(350);
+                $('.c_NewArrival').fadeOut(350);
+                $('.c_ManBest').fadeOut(350);
+                $('.c_LifeStyle').fadeOut(350);
+                $('.c_wbb').css({
+                    "background-color" : "#212121",
+                    "color": "#FFFFFF",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_nab').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_mbb').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_lsb').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+            });
+            // section2 > snap button 클릭 시 효과
+            $('.c_lsb').click(function() {
+                $('.c_LifeStyle').fadeIn(350);
+                $('.c_NewArrival').fadeOut(350);
+                $('.c_WomanBest').fadeOut(350);
+                $('.c_ManBest').fadeOut(350);
+                $('.c_lsb').css({
+                    "background-color" : "#212121",
+                    "color": "#FFFFFF",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_nab').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_mbb').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border": "1px solid #BBBBBB",
+                    "border-spacing": "0px"});
+                $('.c_wbb').css({
+                    "background-color":"#FFFFFF",
+                    "color":"#212121",
+                    "border" : "#BBBBBB",
+                    "border-style" : "solid",
+                    "border-width" : "1px",
+                    "border-spacing": "0px"});
+            });
+        </script>
+    
+    </article>
+
+    
+    <div class="j_paras" style="background-image:url('https://zpsses21c.imghost.cafe24.com/banner/midbanner9.jpg'); margin-bottom: 0;">
+        <p class="j_title">
+            <a>
+                <a><img class="j_lazy j_loaded" data-src="https://zpsses21c.imghost.cafe24.com/banner/mid_txt9.png" 
+                    src="./image/mid_txt9.png"
+                    data-was-processed="true"></a>
+                <a href="#" class="j_buttonPro j_transtw j_large j_btn" >DETAIL</a>                
+            </a>
+        </p>
+    </div> 
+    <footer>
+        <div id="ej_foot1">
+        <p id="ej_foot_list">
+        <a href="#">ABOUT</a><a href="#">AGEENENT</a><a href="#">PRIVARY POLICY</a><a href="#">CONTACT US</a>
+        </p>
+        <P class="ej_foot_tmi">(주)삭스타즈 / 경기도 파주시 문발로 413-2, 102호 / OWNER. 성태민 / 호스팅사업자 : (주)카페24</P>
+        <P class="ej_foot_tmi">TEL. 031 935 4504 / FAX. 031 935 4505 / Email. <a href="#">support@sockstaz.com</a> / 개인정보책임자. 강지희</P>
+        <P class="ej_foot_tmi">사업자등록번호. 855-81-00020 / 통신판매업신고. 2016-경기파주-0676 <a href="#">[정보확인]</a></P>
+        <p id="ej_birth">&copy;SOCKSTAZ co. 2019. All rights reserved.</p>
+        </div>
+        <div class="ej_foot_width">
+        <div id="ej_foot2_1">
+            <p class="ej_foot2_title">CONTACT US</p>
+            <P class="ej_foot2_number"> 031-935-4504</P>
+            <p class="ej_foot_tmi">MON-FRI 11am-6pm</p>
+            <p class="ej_foot_tmi">support@sockstaz.com</p>
+        </div>
+        <div id="ej_foot2_2">
+            <p class="ej_foot2_title">OFFLINE STORE</p>
+            <p class="ej_foot_tmi" id="ej_chung_dam">CHUNG-DAM</p>
+            <p class="ej_foot_tmi">MON-SAT 12pm - 7pm</p>
+            <p class="ej_foot_tmi">02-545-4504</p>
+            <p class="ej_foot_tmi">서울시 강남구 도산대로99길 60, 1F</p>
+        </div>
+        <div id ="ej_foot2_3">
+            <p class="ej_foot2_title">BANK ACCOUNT</p>
+            <p class="ej_foot2_number">1005-002-816317</p>
+            <p class="ej_foot_tmi">우리은행 / (주)삭스타즈</p>
+        </div>
+        <div id="ej_foot2_sns">
+            <p><a href=""><img src="./image/facebook.png"></a>&nbsp;&nbsp;&nbsp;<a href=""><img src="./image/kakao.png"></a>&nbsp;&nbsp;&nbsp;<a href=""><img src="./image/insta.png"></a></p>
+        </div>
+    </div>
+    </footer>
+
+    <!--article1 bxslider jQuery  -->
+    <script>
+        $(document).ready(function(){
+        $('.j_slider3').bxSlider();
+        });
+    </script>
+</body>
+</html>

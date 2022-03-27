@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;padding: 0;
+}
+body {
+    margin: 0;
+    min-width: 960px;
+}
+
+
+/************** nav **************/
+
+/* nav 스타일 지정 */
+
+.c_button {
+    margin-top: 100px;
+    bottom: 50px;
+    display:flex;
+    justify-content: center;
+ }
+ .c_nab {
+    background-color: #212121;
+    border: 1px solid #BBBBBB;
+    border-right: 0;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    flex:1;
+    width :190px;
+ }
+ .c_mbb, .c_wbb, .c_lsb {
+    background-color: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-right: 0;
+    color: #212121;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    flex:1;
+    width :190px;
+ }
+ .c_lsb {border-right:1px solid #BBBBBB;}
+ .c_mbb:hover, .c_wbb:hover, .c_lsb:hover {
+     filter: brightness(95%);
+ }
+ 
+ /***************************************************/
+
+ /*  본문 */
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/* article4 전체 사이즈(div) 부여 */
+.c_nat {
+    max-width: 90%;
+    margin:0 auto;
+    min-width: 960px;
+    
+}
+
+/* 상품 리스트 위치 설정*/
+.c_new_arrival_tab .c_productList {
+    margin:40px auto 0;
+    width: 90%;
+    display: table;
+    min-width: 960px;
+}
+
+
+/* 상품 사이즈 및 간격 조절 */
+.c_new_arrival_tab .c_product01 {
+    width: 24%;
+    margin: 30px 0 40px;
+    display: inline-block;
+    /* box-sizing:border-box; */
+    vertical-align: top; /*상단으로 올리기*/
+}
+
+.c_product_box {
+    margin: 0 auto;
+    width: 95%;
+    line-height: 175%;
+}
+
+.c_product_box div.c_img_box{
+    position: relative;
+}
+
+/* 상품 이미지 들어갈 div 태그 사이즈 설정*/
+.c_product_box a {
+    width:100%;
+}
+
+/* 이미지 사이즈 설정 */
+.c_product_box div.c_img_box a img.c_main_img {
+    width: 95%;
+    z-index: 1;
+    transition:transform 1s;
+}
+
+/* 이미지 겹치기 new arrival 마크 */
+.c_product_box div.c_img_box a img.c_mark {
+    position: absolute;
+    z-index: 99;
+    bottom: 23px;
+    right: 30px;
+    cursor: auto;
+    width: 50px;
+}
+
+.c_product_box div.c_img_box p.c_hover_icon{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: 35%;
+    left: 0;
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+}
+
+/* 상품 링크 걸려있는 글내용 */
+.c_product_box div.c_content_box  {
+    /* position: relative; */
+    text-align:center;
+    padding-left: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'Roboto';
+    font-size: 15px;
+}
+
+.c_new_arrival_tab .c_product01 div.c_content_box p.c_brand {
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
+.c_new_arrival_tab .c_product01 div.c_content_box p.c_brand a {
+    font-weight: 600;
+    font-size: 15px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.c_new_arrival_tab .c_product01 div.c_content_box p.c_product_name {
+    margin: 0;
+    padding: 0;
+}
+
+.c_new_arrival_tab .c_product01 div.c_content_box p.c_product_name a {
+    text-align: center;
+    font-family: 'Roboto';
+    color: #777777;
+    font-size: small;
+}
+
+/* 상품 상세정보 */
+.c_new_arrival_tab .c_product01  ul.c_info li{
+    text-align: center;
+    font-family: 'Roboto'; 
+    float: none;
+    line-height: 175%;
+}
+
+.c_new_arrival_tab .c_product01  ul.c_info li.color span {
+    font-size: 12px; 
+    color: #555555;
+}
+.c_new_arrival_tab .c_product01  ul.c_info li.c_price span {
+    font-size: 12px;
+    color: #999999;
+}
+.c_new_arrival_tab .c_product01  ul.c_info li.c_company span {
+    font-size: 12px;
+    color: #ffffff;
+}
+.c_new_arrival_tab .c_product01  ul.c_info li.c_company_no span {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* 상품 상세정보란 영역 배치 */
+.c_new_arrival_tab .c_product01  ul.c_info li{
+    text-align: center;
+    font-family: 'Roboto'; 
+}
+
+.c_new_arrival_tab .c_product01  ul.c_info li.color {
+    font-size: 12px; 
+    color: #555555;
+}
+.c_new_arrival_tab .c_product01  ul.c_info li.c_price {
+    font-size: 12px;
+    color: #999999;
+}
+.c_new_arrival_tab .c_product01  ul.c_info li.c_company {
+    font-size: 12px;
+    color: #ffffff;
+}
+.c_new_arrival_tab .c_product01  ul.c_info li.c_company_no {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* 상세정보란 컬러칩 */
+.c_new_arrival_tab .c_product01  ul.c_info li.color span.chips {
+    display: inline-block;
+    border: 1px solid #dfdfdf;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    text-align: center;
+}
+
+
+/************    hover    ************/
+/* 상품 링크 걸려있는 글내용 */
+.c_product_box div.c_img_box img.c_main_img:hover{
+    filter: opacity(30%);
+    transition: all 0.1s;
+}
+
+.c_product_box div.c_img_box:hover p.c_hover_icon{
+    display: block;
+}
+.c_new_arrival_tab .c_product01 div.c_content_box p.c_brand a:hover {
+ color: rgb(216, 183, 136);
+}
+.c_new_arrival_tab .c_product01 div.c_content_box p.c_product_name a:hover {
+    text-decoration: underline;
+}
+
